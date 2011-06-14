@@ -2,7 +2,7 @@
   "author": "Kaleb Hornsby <kaleb@hornsby.ws> (kaleb.hornsby.ws)",
   "name": "op",
   "description": "JavaScript Operators As Functions",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "repository": {
     "type": "git",
     "url": "http://github.com/klaeb/js-op.git"
