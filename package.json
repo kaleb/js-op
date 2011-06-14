@@ -6,7 +6,7 @@
   "repository": {
     "url": "http://github.com/klaeb/js-op.git"
   },
-  "main": "operator.js",
+  "main": "op.js",
   "engines": {
     "node": ">= 0.0.0"
   },
