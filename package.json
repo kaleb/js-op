@@ -4,6 +4,7 @@
   "description": "JavaScript Operators As Functions",
   "version": "0.0.2",
   "repository": {
+    "type": "git",
     "url": "http://github.com/klaeb/js-op.git"
   },
   "main": "op.js",
