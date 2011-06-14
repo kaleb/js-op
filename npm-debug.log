@@ -1,0 +1,192 @@
+info it worked if it ends with ok
+verbose cli [ 'node', '/usr/local/bin/npm', 'publish' ]
+info using npm@1.0.10
+info using node@v0.4.9-pre
+verbose config file /home/kzh/.npmrc
+verbose config file /home/kzh/local/node/etc/npmrc
+verbose publish [ '.' ]
+silly testEngine { author: 
+silly testEngine    { name: 'Kaleb Hornsby',
+silly testEngine      email: 'kaleb@hornsby.ws',
+silly testEngine      url: 'kaleb.hornsby.ws' },
+silly testEngine   name: 'op',
+silly testEngine   description: 'JavaScript Operators As Functions',
+silly testEngine   version: '0.0.0',
+silly testEngine   repository: { url: 'http://github.com/klaeb/js-op.git' },
+silly testEngine   main: 'operator.js',
+silly testEngine   engines: { node: '>= 0.0.1' },
+silly testEngine   dependencies: {},
+silly testEngine   devDependencies: {},
+silly testEngine   _id: 'op@0.0.0',
+silly testEngine   _engineSupported: true,
+silly testEngine   _npmVersion: '1.0.10',
+silly testEngine   _nodeVersion: 'v0.4.9-pre',
+silly testEngine   _defaultsLoaded: true,
+silly testEngine   path: '/home/kzh/Workspace/node_modules/op' }
+verbose caching package.json
+verbose loadDefaults op@0.0.0
+verbose pack /home/kzh/Workspace/node_modules/op /tmp/npm-1308058377536/1308058377536-0.07639440055936575/tmp.tgz
+verbose mkdir done: /tmp/npm-1308058377536/1308058377536-0.07639440055936575 755
+verbose mkdir'ed /tmp/npm-1308058377536/1308058377536-0.07639440055936575
+verbose tar about to write tar and gzip it.
+silly tar args [ '-cvf',
+silly tar args   '-',
+silly tar args   'op/package.json',
+silly tar args   'op/op.js',
+silly tar args   'op/README' ]
+verbose success tar -cvf - <file list elided>
+verbose success gzip "--stdout"
+verbose mkdir done: /tmp/npm-1308058377536/1308058377536-0.07639440055936575/contents/___package.npm 755
+verbose unpack_ uid, gid [ undefined, undefined ]
+verbose unpackTarget /tmp/npm-1308058377536/1308058377536-0.07639440055936575/contents/package
+silly gunzTarPerm modes [ '755', '644' ]
+verbose success gzip "--decompress" "--stdout" "/tmp/npm-1308058377536/1308058377536-0.07639440055936575/tmp.tgz"
+verbose success tar "-mvxpf" "-" "--no-same-owner" "-C" "/tmp/npm-1308058377536/1308058377536-0.07639440055936575/contents/___package.npm"
+silly asyncMap in gTP /tmp/npm-1308058377536/1308058377536-0.07639440055936575/contents/___package.npm/op/
+silly asyncMap in gTP /tmp/npm-1308058377536/1308058377536-0.07639440055936575/contents/___package.npm/op/package.json
+silly asyncMap in gTP /tmp/npm-1308058377536/1308058377536-0.07639440055936575/contents/___package.npm/op/README
+silly asyncMap in gTP /tmp/npm-1308058377536/1308058377536-0.07639440055936575/contents/___package.npm/op/op.js
+verbose gunzed /tmp/npm-1308058377536/1308058377536-0.07639440055936575/contents/___package.npm/op
+verbose rm'ed /tmp/npm-1308058377536/1308058377536-0.07639440055936575/contents/package
+verbose renamed [ '/tmp/npm-1308058377536/1308058377536-0.07639440055936575/contents/___package.npm/op',
+verbose renamed   '/tmp/npm-1308058377536/1308058377536-0.07639440055936575/contents/package' ]
+silly testEngine { author: 
+silly testEngine    { name: 'Kaleb Hornsby',
+silly testEngine      email: 'kaleb@hornsby.ws',
+silly testEngine      url: 'kaleb.hornsby.ws' },
+silly testEngine   name: 'op',
+silly testEngine   description: 'JavaScript Operators As Functions',
+silly testEngine   version: '0.0.0',
+silly testEngine   repository: { url: 'http://github.com/klaeb/js-op.git' },
+silly testEngine   main: 'operator.js',
+silly testEngine   engines: { node: '>= 0.0.1' },
+silly testEngine   dependencies: {},
+silly testEngine   devDependencies: {},
+silly testEngine   _id: 'op@0.0.0',
+silly testEngine   _engineSupported: true,
+silly testEngine   _npmVersion: '1.0.10',
+silly testEngine   _nodeVersion: 'v0.4.9-pre',
+silly testEngine   _defaultsLoaded: true,
+silly testEngine   path: '/tmp/npm-1308058377536/1308058377536-0.07639440055936575/contents/package' }
+verbose caching /tmp/npm-1308058377536/1308058377536-0.07639440055936575/contents/package/package.json
+verbose loadDefaults op@0.0.0
+verbose tarball contents [ 'package' ]
+verbose from cache /tmp/npm-1308058377536/1308058377536-0.07639440055936575/contents/package/package.json
+verbose pack /tmp/npm-1308058377536/1308058377536-0.07639440055936575/contents/package /home/kzh/.npm/op/0.0.0/package.tgz
+verbose mkdir done: /home/kzh/.npm/op/0.0.0 755
+verbose mkdir'ed /home/kzh/.npm/op/0.0.0
+verbose tar about to write tar and gzip it.
+silly tar args [ '-cvf',
+silly tar args   '-',
+silly tar args   'package/package.json',
+silly tar args   'package/README',
+silly tar args   'package/op.js' ]
+verbose success tar -cvf - <file list elided>
+verbose mkdir done: /home/kzh/.npm/op/0.0.0/___package.npm 755
+verbose unpack_ uid, gid [ undefined, undefined ]
+verbose unpackTarget /home/kzh/.npm/op/0.0.0/package
+silly gunzTarPerm modes [ '755', '644' ]
+verbose success gzip "--stdout"
+verbose success gzip "--decompress" "--stdout" "/home/kzh/.npm/op/0.0.0/package.tgz"
+verbose success tar "-mvxpf" "-" "--no-same-owner" "-C" "/home/kzh/.npm/op/0.0.0/___package.npm"
+silly asyncMap in gTP /home/kzh/.npm/op/0.0.0/___package.npm/package/
+silly asyncMap in gTP /home/kzh/.npm/op/0.0.0/___package.npm/package/package.json
+silly asyncMap in gTP /home/kzh/.npm/op/0.0.0/___package.npm/package/op.js
+silly asyncMap in gTP /home/kzh/.npm/op/0.0.0/___package.npm/package/README
+verbose gunzed /home/kzh/.npm/op/0.0.0/___package.npm/package
+verbose rm'ed /home/kzh/.npm/op/0.0.0/package
+verbose renamed [ '/home/kzh/.npm/op/0.0.0/___package.npm/package',
+verbose renamed   '/home/kzh/.npm/op/0.0.0/package' ]
+silly testEngine { author: 
+silly testEngine    { name: 'Kaleb Hornsby',
+silly testEngine      email: 'kaleb@hornsby.ws',
+silly testEngine      url: 'kaleb.hornsby.ws' },
+silly testEngine   name: 'op',
+silly testEngine   description: 'JavaScript Operators As Functions',
+silly testEngine   version: '0.0.0',
+silly testEngine   repository: { url: 'http://github.com/klaeb/js-op.git' },
+silly testEngine   main: 'operator.js',
+silly testEngine   engines: { node: '>= 0.0.1' },
+silly testEngine   dependencies: {},
+silly testEngine   devDependencies: {},
+silly testEngine   _id: 'op@0.0.0',
+silly testEngine   _engineSupported: true,
+silly testEngine   _npmVersion: '1.0.10',
+silly testEngine   _nodeVersion: 'v0.4.9-pre',
+silly testEngine   _defaultsLoaded: true,
+silly testEngine   dist: 
+silly testEngine    { shasum: 'd47a48c6f41f7c4a2d39b3e3b320fc9ac171dcc9',
+silly testEngine      tarball: 'http://registry.npmjs.org/op/-/op-0.0.0.tgz' },
+silly testEngine   scripts: {} }
+verbose caching /home/kzh/.npm/op/0.0.0/package/package.json
+verbose loadDefaults op@0.0.0
+silly updated sha bytes 737
+info shasum d47a48c6f41f7c4a2d39b3e3b320fc9ac171dcc9
+info shasum /home/kzh/.npm/op/0.0.0/package.tgz
+verbose from cache /home/kzh/.npm/op/0.0.0/package/package.json
+verbose chmod /home/kzh/.npm/op/0.0.0/package.json 644
+verbose chmod /home/kzh/.npm/op/0.0.0/package.tgz 644
+silly publish { author: 
+silly publish    { name: 'Kaleb Hornsby',
+silly publish      email: 'kaleb@hornsby.ws',
+silly publish      url: 'kaleb.hornsby.ws' },
+silly publish   name: 'op',
+silly publish   description: 'JavaScript Operators As Functions',
+silly publish   version: '0.0.0',
+silly publish   repository: { url: 'http://github.com/klaeb/js-op.git' },
+silly publish   main: 'operator.js',
+silly publish   engines: { node: '>= 0.0.1' },
+silly publish   dependencies: {},
+silly publish   devDependencies: {},
+silly publish   _id: 'op@0.0.0',
+silly publish   _engineSupported: true,
+silly publish   _npmVersion: '1.0.10',
+silly publish   _nodeVersion: 'v0.4.9-pre',
+silly publish   _defaultsLoaded: true,
+silly publish   dist: 
+silly publish    { shasum: 'd47a48c6f41f7c4a2d39b3e3b320fc9ac171dcc9',
+silly publish      tarball: 'http://registry.npmjs.org/op/-/op-0.0.0.tgz' },
+silly publish   scripts: {} }
+info prepublish op@0.0.0
+verbose PUT op
+verbose raw, before any munging op
+verbose url resolving [ 'http://registry.npmjs.org/', './op' ]
+verbose url resolved http://registry.npmjs.org/op
+verbose url parsed { protocol: 'http:',
+verbose url parsed   slashes: true,
+verbose url parsed   host: 'registry.npmjs.org',
+verbose url parsed   hostname: 'registry.npmjs.org',
+verbose url parsed   href: 'http://registry.npmjs.org/op',
+verbose url parsed   pathname: '/op' }
+WARN Sending authorization over insecure channel.
+silly writing json { _id: 'op',
+silly writing json   name: 'op',
+silly writing json   description: 'JavaScript Operators As Functions',
+silly writing json   'dist-tags': {},
+silly writing json   versions: {},
+silly writing json   maintainers: [ { name: 'kzh', email: 'kaleb@hornsby.ws' } ] }
+verbose response http://registry.npmjs.org/op
+silly chunk {"error":"conflict","reason":"Document update conflict."}
+silly chunk 
+verbose GET op
+verbose raw, before any munging op
+verbose url resolving [ 'http://registry.npmjs.org/', './op' ]
+verbose url resolved http://registry.npmjs.org/op
+verbose url parsed { protocol: 'http:',
+verbose url parsed   slashes: true,
+verbose url parsed   host: 'registry.npmjs.org',
+verbose url parsed   hostname: 'registry.npmjs.org',
+verbose url parsed   href: 'http://registry.npmjs.org/op',
+verbose url parsed   pathname: '/op' }
+verbose response http://registry.npmjs.org/op
+silly chunk {"_id":"op","_rev":"3-b3227f881e3a2ede4e66088ac2b495e2","name":"op","description":"JavaScript Operators As Functions","dist-tags":{"latest":"0.0.0"},"versions":{"0.0.0":{"author":{"name":"Kaleb Hornsby","email":"kaleb@hornsby.ws","url":"kaleb.hornsby.ws"},"name":"op","description":"JavaScript Operators As Functions","version":"0.0.0","repository":{"url":"http://github.com/klaeb/js-operator.git"},"main":"operator.js","engines":{"node":">= 0.0.0"},"dependencies":{},"devDependencies":{},"_id":"op@0.0.0","_engineSupported":true,"_npmVersion":"1.0.10","_nodeVersion":"v0.4.9-pre","_defaultsLoaded":true,"dist":{"shasum":"32530b60c3dc7526f50dbd13bcc473af291195e4","tarball":"http://registry.npmjs.org/op/-/op-0.0.0.tgz"},"scripts":{},"directories":{}}},"maintainers":[{"name":"kzh","email":"kaleb@hornsby.ws"}],"time":{"0.0.0":"2011-06-14T13:30:30.907Z"},"author":{"name":"Kaleb Hornsby","email":"kaleb@hornsby.ws","url":"kaleb.hornsby.ws"},"repository":{"url":"http://github.com/klaeb/js-operator.git"}}
+info Already published op@0.0.0
+verbose uploading bin dists []
+ERR! publish fail Cannot publish over existing version.
+ERR! publish fail Bump the 'version' field, set the --force flag, or
+ERR! publish fail     npm unpublish 'op@0.0.0'
+ERR! publish fail and try again
+ERR! 
+ERR! System Linux 2.6.38-10-generic
+ERR! command "node" "/usr/local/bin/npm" "publish"
+verbose exit [ 1, true ]

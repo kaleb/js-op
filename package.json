@@ -2,13 +2,13 @@
   "author": "Kaleb Hornsby <kaleb@hornsby.ws> (kaleb.hornsby.ws)",
   "name": "op",
   "description": "JavaScript Operators As Functions",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "repository": {
     "url": "http://github.com/klaeb/js-op.git"
   },
   "main": "operator.js",
   "engines": {
-    "node": ">= 0.0.1"
+    "node": ">= 0.0.0"
   },
   "dependencies": {},
   "devDependencies": {}
