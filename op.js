@@ -51,34 +51,34 @@ exports.or = function(a, b) {
  * ==========
  */
 
-Math.add = function(a, b) {
+exports.add = function(a, b) {
     return (+a) + (+b);
 };
 exports.add = function(a, b) {
     return a + b;
 };
-exports.sub = Math.sub = function(a, b) {
+exports.sub = function(a, b) {
     return a - b;
 };
-exports.mul = Math.mul = function(a, b) {
+exports.mul = function(a, b) {
     return a * b;
 };
-exports.div = Math.div = function(a, b) {
+exports.div = function(a, b) {
     return a / b;
 };
-Math.floordiv = Math.intdiv = function(a, b) {
+exports.floordiv = exports.intdiv = function(a, b) {
     return Math.floor(a / b); 
 };
-Math.divmod = function(a, b) {
-    return [Math.floordiv(a, b), a % b];
+exports.divmod = function(a, b) {
+    return [exports.floordiv(a, b), a % b];
 };
-exports.mod = Math.mod = function(a, b) {
+exports.mod = function(a, b) {
     return a % b;
 };
-exports.pos = Math.pos = function(obj) {
+exports.pos = function(obj) {
     return +obj;
 };
-exports.neg = Math.neg = function(obj) {
+exports.neg = function(obj) {
     return -obj;
 };
 /**
