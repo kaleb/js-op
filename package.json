@@ -4,7 +4,7 @@
   "description": "JavaScript Operators As Functions",
   "version": "0.0.0",
   "repository": {
-    "url": ""
+    "url": "http://github.com/klaeb/js-operator.git"
   },
   "main": "operator.js",
   "engines": {
