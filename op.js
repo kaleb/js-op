@@ -1,5 +1,4 @@
 "use strict";
-var Op = {};
 /**
  * Comparison
  * ==========
@@ -25,14 +24,14 @@ exports.gt = function(a, b) {
 exports.is = function(a, b) {
     return a === b;
 };
-exports.isnt = Op.is_not = function(a, b) {
+exports.isnt = exports.is_not = function(a, b) {
     return a !== b;
 };
 /**
  * Logical
  * =======
  */
-Op['in'] = exports.contains = function(a, obj) {
+exports['in'] = exports.contains = function(a, obj) {
     return a in obj;
 };
 exports.not = function(obj) {
