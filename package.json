@@ -1,0 +1,15 @@
+{
+  "author": "Kaleb Hornsby <kaleb@hornsby.ws> (kaleb.hornsby.ws)",
+  "name": "operator",
+  "description": "JavaScript Operators As Functions",
+  "version": "0.0.0",
+  "repository": {
+    "url": ""
+  },
+  "main": "operator.js",
+  "engines": {
+    "node": ">= 0.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
