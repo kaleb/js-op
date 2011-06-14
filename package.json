@@ -8,7 +8,7 @@
   },
   "main": "operator.js",
   "engines": {
-    "node": ">= 0.0.0"
+    "node": ">= 0.0.1"
   },
   "dependencies": {},
   "devDependencies": {}
