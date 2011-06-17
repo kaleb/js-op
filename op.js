@@ -132,7 +132,7 @@ exports.set = function(obj, k, v) {
 };
 exports.del = function(obj, k) {
     if (typeof k === 'object') {
-        for (var i in k) if k.hasOwnProperty(i) {
+        for (var i in k) if (k.hasOwnProperty(i)) {
             delete obj[k[i]];
         }
     } else {
@@ -147,7 +147,7 @@ exports.get = function(obj, k) {
                 k[i] = obj[k[i]];
             }
         } else {
-            for (var i in k) if k.hasOwnProperty(i) {
+            for (var i in k) if (k.hasOwnProperty(i)) {
                 k[i] = obj[i];
             }
         }
