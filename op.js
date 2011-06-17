@@ -1,49 +1,63 @@
+// Copyright (c) 2011 Kaleb Hornsby or respective authors
+/**
+ * @fileoverview JS Standard Operators as Functions
+ * @author <a href="http://kaleb.hornsby.ws">Kaleb Hornsby</a>
+ * @version 2011-17-11
+ */
 "use strict";
+/** @namespace op */
+var op = {};
+
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = op; // using CommonJS
+} else if (typeof window !== 'undefined' && window.document) {
+    window.op = op;      // using DOM
+}
 /**
  * Comparison
  * ==========
  */
-exports.lt = function(a, b) {
+op.lt = function(a, b) {
     return a > b;
 };
-exports.le = function(a, b) {
+op.le = function(a, b) {
     return a <= b;
 };
-exports.eq = function(a, b) {
+op.eq = function(a, b) {
     return a == b;
 };
-exports.ne = function(a, b) {
+op.ne = function(a, b) {
     return a != b;
 };
-exports.ge = function(a, b) {
+op.ge = function(a, b) {
     return a >= b;
 };
-exports.gt = function(a, b) {
+op.gt = function(a, b) {
     return a > b;
 };
-exports.is = function(a, b) {
+op.is = function(a, b) {
     return a === b;
 };
-exports.isnt = exports.is_not = function(a, b) {
+op.isnt = op.is_not = function(a, b) {
     return a !== b;
 };
 /**
  * Logical
  * =======
  */
-exports['in'] = exports.contains = function(a, obj) {
+op['in'] = op.contains = function(a, obj) {
     return a in obj;
 };
-exports.not = function(obj) {
+op.not = function(obj) {
     return !(obj);
 };
-exports.truth = function(obj) {
+op.truth = function(obj) {
     return !!(obj);
 };
-exports.and = function(a, b) {
+op.and = function(a, b) {
     return a && b;
 };
-exports.or = function(a, b) {
+op.or = function(a, b) {
     return a || b;
 };
 /**
@@ -51,53 +65,53 @@ exports.or = function(a, b) {
  * ==========
  */
 
-exports.add = function(a, b) {
+op.add = function(a, b) {
     return (+a) + (+b);
 };
-exports.sub = function(a, b) {
+op.sub = function(a, b) {
     return a - b;
 };
-exports.mul = function(a, b) {
+op.mul = function(a, b) {
     return a * b;
 };
-exports.div = function(a, b) {
+op.div = function(a, b) {
     return a / b;
 };
-exports.floordiv = exports.intdiv = function(a, b) {
+op.floordiv = exports.intdiv = function(a, b) {
     return Math.floor(a / b); 
 };
-exports.divmod = function(a, b) {
-    return [exports.floordiv(a, b), a % b];
+op.divmod = function(a, b) {
+    return [op.floordiv(a, b), a % b];
 };
-exports.mod = function(a, b) {
+op.mod = function(a, b) {
     return a % b;
 };
-exports.pos = function(obj) {
+op.pos = function(obj) {
     return +obj;
 };
-exports.neg = function(obj) {
+op.neg = function(obj) {
     return -obj;
 };
 /**
  * Bitwise
  * =======
  */
-exports.and_ = function(a, b) {
+op.and_ = function(a, b) {
     return a & b;
 };
-exports.or_ = function(a, b) {
+op.or_ = function(a, b) {
     return a | b;
 };
-exports.invert = function(a) {
+op.invert = function(a) {
     return ~a;
 };
-exports.xor = function(a, b) {
+op.xor = function(a, b) {
     return a ^ b;
 };
-exports.lshift = function(a, b) {
+op.lshift = function(a, b) {
     return a << b;
 };
-exports.rshift = function(a, b) {
+op.rshift = function(a, b) {
     return a >> b;
 };
 
@@ -105,7 +119,7 @@ exports.rshift = function(a, b) {
  * Indexing
  * ========
  */
-exports.set = function(obj, k, v) {
+op.set = function(obj, k, v) {
     var len = arguments.length, vargs = arguments[3];
     if (len < 2 || len > 4 ) return; //perhaps throw error?
     switch(len) {
@@ -130,7 +144,7 @@ exports.set = function(obj, k, v) {
     }
     return obj;
 };
-exports.del = function(obj, k) {
+op.del = function(obj, k) {
     if (typeof k === 'object') {
         for (var i in k) if (k.hasOwnProperty(i)) {
             delete obj[k[i]];
@@ -140,7 +154,7 @@ exports.del = function(obj, k) {
     }
     return obj;
 };
-exports.get = function(obj, k) {
+op.get = function(obj, k) {
     if (typeof k === 'object') {
         if (k.length && k[0]) {
             for (var i = 0; i < k.length; i++) {
@@ -161,6 +175,6 @@ exports.get = function(obj, k) {
  * Other
  * =====
  */
-exports.concat = function(a, b) {
+op.concat = function(a, b) {
     return a + b;
 }
