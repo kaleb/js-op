@@ -77,7 +77,7 @@ op.mul = function(a, b) {
 op.div = function(a, b) {
     return a / b;
 };
-op.floordiv = exports.intdiv = function(a, b) {
+op.floordiv = op.intdiv = function(a, b) {
     return Math.floor(a / b); 
 };
 op.divmod = function(a, b) {
