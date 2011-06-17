@@ -4,7 +4,7 @@
       { "name": "Dylon Edwards", "email": "dylon@deltasecho.com" }
   ],
   "name": "op",
-  "description": "JavaScript Operators As Functions",
+  "description": "JavaScript Standard Operators As Functions",
   "version": "0.0.4",
   "repository": {
     "type": "git",
