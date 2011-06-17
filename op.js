@@ -103,7 +103,7 @@ exports.asr = function(a, b) {
 /**
  * Miscellaneous
  */
-exports.get = ( function ( undef ) {
+exports.getdef = ( function ( undef ) {
 
     /**
      * Returns the value of the dictionary at the specified key; if the key does
@@ -125,7 +125,7 @@ exports.get = ( function ( undef ) {
      * The value of the dictionary mapped to by the key or the default value
      * returned by the function if the dictionary does not contain the key.
      */
-    return function( dict, key, defval ) {
+    return function ( dict, key, defval ) {
         var val = dict[ key ];
 
         if (( val === undef ) && defval ) {
