@@ -169,7 +169,7 @@ op.get = function(obj, k) {
     }
     return obj[k];
 };
-exports.getdef = ( function ( undef ) {
+op.getdef = ( function ( undef ) {
 
     /**
      * Returns the value of the dictionary at the specified key; if the key does
