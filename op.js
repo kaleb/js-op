@@ -177,10 +177,10 @@ exports.getdef = ( function ( undef ) {
      * it will be invoked and its value will be both assigned to the dictionary
      * at the specified key and returned to the caller.
      *
-     * @param dict
+     * @param obj
      * Dictionary object or array
      *
-     * @param key
+     * @param k
      * Index value
      *
      * @param defval
@@ -191,13 +191,12 @@ exports.getdef = ( function ( undef ) {
      * The value of the dictionary mapped to by the key or the default value
      * returned by the function if the dictionary does not contain the key.
      */
-    return function ( dict, key, defval ) {
-        var val = dict[ key ];
+    return function (obj, k, defval) {
+        var val = obj[ k ];
 
         if (( val === undef ) && defval ) {
-            val = dict[ key ] = defval();
+            val = obj[ k ] = defval();
         }
-
         return val;
     };
 }());
