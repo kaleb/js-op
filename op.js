@@ -100,3 +100,38 @@ exports.asl = function(a, b) {
 exports.asr = function(a, b) {
     return a >> b;
 };
+/**
+ * Miscellaneous
+ */
+exports.get = ( function ( undef ) {
+
+    /**
+     * Returns the value of the dictionary at the specified key; if the key does
+     * not yet exist in the dictionary and a default value function is provided,
+     * it will be invoked and its value will be both assigned to the dictionary
+     * at the specified key and returned to the caller.
+     *
+     * @param dict
+     * Dictionary object or array
+     *
+     * @param key
+     * Index value
+     *
+     * @param defval
+     * (Optional) Function which returns a default value if that of the
+     * dictionary mapped to by the key is not yet defined.
+     *
+     * @return
+     * The value of the dictionary mapped to by the key or the default value
+     * returned by the function if the dictionary does not contain the key.
+     */
+    return function( dict, key, defval ) {
+        var val = dict[ key ];
+
+        if (( val === undef ) && defval ) {
+            val = dict[ key ] = defval();
+        }
+
+        return val;
+    };
+}());
