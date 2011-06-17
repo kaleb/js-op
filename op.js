@@ -82,21 +82,85 @@ exports.neg = function(obj) {
  * Bitwise
  * =======
  */
-exports.band = function(a, b) {
+exports.and_ = function(a, b) {
     return a & b;
 };
-exports.bor = function(a, b) {
+exports.or_ = function(a, b) {
     return a | b;
 };
-exports.bneg = function(a) {
+exports.invert = function(a) {
     return ~a;
 };
-exports.bxor = function(a, b) {
+exports.xor = function(a, b) {
     return a ^ b;
 };
-exports.asl = function(a, b) {
+exports.lshift = function(a, b) {
     return a << b;
 };
-exports.asr = function(a, b) {
+exports.rshift = function(a, b) {
     return a >> b;
 };
+
+/**
+ * Indexing
+ * ========
+ */
+exports.set = function(obj, k, v) {
+    var len = arguments.length, vargs = arguments[3];
+    if (len < 2 || len > 4 ) return; //perhaps throw error?
+    switch(len) {
+    case 2:
+        if (typeof k === 'object') {
+            for (var i in k) if (k.hasOwnProperty(i)) {
+                obj[i] = k[i];
+            }
+            // break so fall-through sets obj[k] = undef
+            break;
+        }
+    case 3:
+        obj[k] = v;  //What if typeof k is object?
+        break;
+    case 4:
+        if (typeof k === 'number' && typeof v === 'number' && typeof vargs === 'object') {
+            for (var i = v, j = 0; v < vargs; i++, j++) {
+                obj[i] = vargs[j];
+            }
+            break;
+        }
+    }
+    return obj;
+};
+exports.del = function(obj, k) {
+    if (typeof k === 'object') {
+        for (var i in k) if k.hasOwnProperty(i) {
+            delete obj[k[i]];
+        }
+    } else {
+        delete obj[k];
+    }
+    return obj;
+};
+exports.get = function(obj, k) {
+    if (typeof k === 'object') {
+        if (k.length && k[0]) {
+            for (var i = 0; i < k.length; i++) {
+                k[i] = obj[k[i]];
+            }
+        } else {
+            for (var i in k) if k.hasOwnProperty(i) {
+                k[i] = obj[i];
+            }
+        }
+        return k;
+    }
+    return obj[k];
+};
+
+
+/**
+ * Other
+ * =====
+ */
+exports.concat = function(a, b) {
+    return a + b;
+}
