@@ -54,9 +54,6 @@ exports.or = function(a, b) {
 exports.add = function(a, b) {
     return (+a) + (+b);
 };
-exports.add = function(a, b) {
-    return a + b;
-};
 exports.sub = function(a, b) {
     return a - b;
 };
@@ -85,4 +82,21 @@ exports.neg = function(obj) {
  * Bitwise
  * =======
  */
-// TODO
+exports.band = function(a, b) {
+    return a & b;
+};
+exports.bor = function(a, b) {
+    return a | b;
+};
+exports.bneg = function(a) {
+    return ~a;
+};
+exports.bxor = function(a, b) {
+    return a ^ b;
+};
+exports.asl = function(a, b) {
+    return a << b;
+};
+exports.asr = function(a, b) {
+    return a >> b;
+};
