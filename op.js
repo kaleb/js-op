@@ -18,7 +18,7 @@ if (typeof module !== 'undefined' && module.exports) {
  * ==========
  */
 op.lt = function(a, b) {
-    return a > b;
+    return a < b;
 };
 op.le = function(a, b) {
     return a <= b;
