@@ -1,5 +1,6 @@
-const assert = require('assert');
-const op = require('./op');
+import assert from 'assert';
+import * as op from './op.mjs';
+//const op = require('./op');
 
 assert.ok(op.lt(1, 2));
 assert.ok(op.le(1, 2));
@@ -9,7 +10,7 @@ assert.ok(op.ge(2, 1));
 assert.ok(op.gt(2, 1));
 assert.ok(op.is(1, 1));
 assert.ok(op.isnt(1, 2));
-assert.ok(op.in('in', op));
+assert.ok(op.isIn('isIn', op));
 assert.ok(op.not(false));
 assert.ok(op.truth(1));
 assert.ok(op.and(1, true));

@@ -17,6 +17,6 @@
   "dependencies": {},
   "devDependencies": {},
   "scripts": {
-    "test": "node test.js"
+    "test": "node --experimental-modules test.mjs"
   }
 }
