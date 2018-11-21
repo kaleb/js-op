@@ -1,5 +1,5 @@
 {
-  "author": "Kaleb Hornsby <kaleb@hornsby.ws> (kaleb.hornsby.ws)",
+  "author": "Kaleb Hornsby <kaleb@horns.by> (kaleb.horns.by)",
   "contributors": [
       { "name": "Dylon Edwards", "email": "dylon@deltasecho.com" }
   ],
@@ -15,5 +15,8 @@
     "node": ">= 0.0.0"
   },
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {},
+  "scripts": {
+    "test": "node test.js"
+  }
 }
