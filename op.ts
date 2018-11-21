@@ -1,147 +1,164 @@
-export function lt(a, b) {
+export type Orderable = number|string|{valueOf: () => number};
+export type NotSymbol = boolean|number|string|Function|object;
+
+export function lt<T extends Orderable>(a: T, b: T) {
     return a < b;
 };
-export function le(a, b) {
+export function le<T extends Orderable>(a: T, b: T) {
     return a <= b;
 };
-export function eq(a, b) {
-    return a == b;
-};
-export function ne(a, b) {
-    return a != b;
-};
-export function ge(a, b) {
+export function ge<T extends Orderable>(a: T, b: T) {
     return a >= b;
 };
-export function gt(a, b) {
+export function gt<T extends Orderable>(a: T, b: T) {
     return a > b;
 };
-export function is(a, b) {
+export function eq<T>(a: T, b: T) {
+    return a == b;
+};
+export function ne<T>(a: T, b: T) {
+    return a != b;
+};
+export function is<T>(a: T, b: T) {
     return a === b;
 };
-export function isnt(a, b) {
+export function isnt<T>(a: T, b: T) {
     return a !== b;
 };
+
 /**
  * Logical
  * =======
  */
-export function isIn(a, obj) {
+export function isIn(a: string, obj: object) {
     return a in obj;
 }
-export function not(obj) {
+export function not(obj: unknown) {
     return !(obj);
 };
-export function truth(obj) {
+export function truth(obj: unknown) {
     return !!(obj);
 };
-export function and(a, b) {
+
+export function and(a: unknown, b: unknown) {
     return a && b;
 };
-export function or(a, b) {
+export function or(a: unknown, b: unknown) {
     return a || b;
 };
+
 /**
  * Arithmetic
  * ==========
  */
 
-export function add(a, b) {
-    return (+a) + (+b);
+export function add(a: number, b: number) {
+    return a + b;
 };
-export function sub(a, b) {
+export function sub(a: number, b: number) {
     return a - b;
 };
-export function mul(a, b) {
+export function mul(a: number, b: number) {
     return a * b;
 };
-export function div(a, b) {
+export function div(a: number, b: number) {
     return a / b;
 };
-export function floordiv(a, b) {
+export function floordiv(a: number, b: number) {
     return Math.floor(a / b); 
 };
-export function divmod(a, b) {
+export function divmod(a: number, b: number) {
     return [floordiv(a, b), a % b];
 };
-export function mod(a, b) {
+export function mod(a: number, b: number) {
     return a % b;
 };
-export function pos(obj) {
+export function pos(obj: NotSymbol) {
     return +obj;
 };
-export function neg(obj) {
+export function neg(obj: number) {
     return -obj;
 };
 /**
  * Bitwise
  * =======
  */
-export function and_(a, b) {
+export function and_(a: number, b: number) {
     return a & b;
 };
-export function or_(a, b) {
+export function or_(a: number, b: number) {
     return a | b;
 };
-export function invert(a) {
+export function invert(a: number) {
     return ~a;
 };
-export function xor(a, b) {
+export function xor(a: number, b: number) {
     return a ^ b;
 };
-export function lshift(a, b) {
+export function lshift(a: number, b: number) {
     return a << b;
 };
-export function rshift(a, b) {
+export function rshift(a: number, b: number) {
     return a >> b;
 };
+
+function getProperty<T, K extends keyof T>(obj: T, propertyName: K) {
+    return obj[propertyName];
+}
+
+function getProperties<T, K extends keyof T>(obj: T, propertyNames: K[]) {
+    return propertyNames.reduce((result, propertyName) => {
+        result[propertyName] = obj[propertyName];
+        return result;
+    }, {} as Partial<T>);
+}
+
+function setProperty<T, K extends keyof T>(obj: T, propertyName: K, propertyValue: T[K]) {
+    obj[propertyName] = propertyValue;
+    return obj;
+}
+
+function setProperties<T, K extends keyof T>(obj: T, properties: Partial<T>) {
+    Object.assign(obj, properties) as T;
+    return obj;
+}
 
 /**
  * Indexing
  * ========
  */
-export function set(obj, k, v) {
+export function set<T, K extends keyof T>(obj: T, properties: Partial<T>): T;
+export function set<T, K extends keyof T>(obj: T, propertyName: K, propertyValue: T[K]): T;
+export function set<T>(obj: T, k: (keyof T|Partial<T>), v?: unknown) {
     var len = arguments.length;
-    if (len < 2 || len > 4 ) return; //perhaps throw error?
+    if (len < 2 || len > 3 ) return; //perhaps throw error?
     switch(len) {
     case 2:
-        if (typeof k === 'object') {
-            for (var i in k) if (k.hasOwnProperty(i)) {
-                obj[i] = k[i];
-            }
+        if (typeof k === 'object' && k !== null) {
+            setProperties(obj, k);
             // break so fall-through sets obj[k] = undef
             break;
         }
     case 3:
-        obj[k] = v;  //What if typeof k is object?
+        if (typeof k === 'string' || typeof k === 'number') {
+            setProperty(obj, k, v as any);
+        }
         break;
     }
     return obj;
 };
-export function del(obj, k) {
-    if (typeof k === 'object') {
-        for (var i in k) if (k.hasOwnProperty(i)) {
-            delete obj[k[i]];
-        }
-    } else {
-        delete obj[k];
-    }
+export function del<T>(obj: T, k: keyof T) {
+    delete obj[k];
     return obj;
 };
-export function get(obj, k) {
+export function get<T>(obj: T, k: keyof T|Partial<T>|Array<keyof T>) {
     if (typeof k === 'object') {
-        if (k.length && k[0]) {
-            for (var i = 0; i < k.length; i++) {
-                k[i] = obj[k[i]];
-            }
-        } else {
-            for (var j in k) if (k.hasOwnProperty(j)) {
-                k[i] = obj[j];
-            }
+        if (Array.isArray(k)) {
+            getProperties(obj, k);
         }
         return k;
     }
-    return obj[k];
+    return getProperty(obj, k);
 };
 /**
  * Returns the value of the dictionary at the specified key; if the key does
@@ -163,7 +180,7 @@ export function get(obj, k) {
  * The value of the dictionary mapped to by the key or the default value
  * returned by the function if the dictionary does not contain the key.
  */
-export function getdef(obj, k, defval) {
+export function getdef<T, K extends keyof T>(obj: T, k: K, defval: () => T[K]) {
     var val = obj[ k ];
 
     if (( val === undefined ) && defval ) {
@@ -176,6 +193,6 @@ export function getdef(obj, k, defval) {
  * Other
  * =====
  */
-export function concat(a, b) {
+export function concat(a: string, b: string) {
     return a + b;
 }

@@ -3,11 +3,13 @@ import * as op from './op';
 //const op = require('./op');
 
 assert.ok(op.lt(1, 2));
+assert.ok(op.lt('', 'a'));
+assert.ok(op.lt(new Date(0), new Date()))
 assert.ok(op.le(1, 2));
-assert.ok(op.eq(1, 1));
-assert.ok(op.ne(1, 2));
 assert.ok(op.ge(2, 1));
 assert.ok(op.gt(2, 1));
+assert.ok(op.eq(1, 1));
+assert.ok(op.ne(1, 2));
 assert.ok(op.is(1, 1));
 assert.ok(op.isnt(1, 2));
 assert.ok(op.isIn('isIn', op));
@@ -36,7 +38,7 @@ assert.strictEqual(op.rshift(1, 2), 0);
 assert.strictEqual(op.concat('a', 'b'), 'ab');
 
 assert.strictEqual(typeof op.get(op, 'get'), 'function');
-assert.deepStrictEqual(op.set({}, 'key', 'value'), {key: 'value'});
+assert.deepStrictEqual(op.set({} as {key: string}, 'key', 'value'), {key: 'value'});
 
 var o = {key: 'value'};
 assert.deepStrictEqual(op.del(o, 'key'), {});
