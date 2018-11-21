@@ -1,0 +1,5 @@
+/.gitignore
+/.git
+/test.js
+/test.ts
+/tsconfig.json

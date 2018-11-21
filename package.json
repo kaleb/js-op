@@ -20,6 +20,10 @@
     "typescript": "^3.1.6"
   },
   "scripts": {
-    "test": "node --experimental-modules test.mjs"
+    "pretest": "npm run build",
+    "test": "node test.js",
+    "build": "npx tsc",
+    "clean": "rm op.js test.js",
+    "prepare": "npm test"
   }
 }
