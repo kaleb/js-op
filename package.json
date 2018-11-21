@@ -1,7 +1,10 @@
 {
   "author": "Kaleb Hornsby <kaleb@horns.by> (kaleb.horns.by)",
   "contributors": [
-      { "name": "Dylon Edwards", "email": "dylon@deltasecho.com" }
+    {
+      "name": "Dylon Edwards",
+      "email": "dylon@deltasecho.com"
+    }
   ],
   "name": "op",
   "description": "JavaScript Standard Operators As Functions",
@@ -11,11 +14,11 @@
     "url": "http://github.com/klaeb/js-op.git"
   },
   "main": "op.js",
-  "engines": {
-    "node": ">= 0.0.0"
-  },
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/node": "^10.12.9",
+    "typescript": "^3.1.6"
+  },
   "scripts": {
     "test": "node --experimental-modules test.mjs"
   }

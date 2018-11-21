@@ -1,5 +1,5 @@
 import assert from 'assert';
-import * as op from './op.mjs';
+import * as op from './op';
 //const op = require('./op');
 
 assert.ok(op.lt(1, 2));

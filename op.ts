@@ -101,7 +101,7 @@ export function rshift(a, b) {
  * ========
  */
 export function set(obj, k, v) {
-    var len = arguments.length, vargs = arguments[3];
+    var len = arguments.length;
     if (len < 2 || len > 4 ) return; //perhaps throw error?
     switch(len) {
     case 2:
@@ -115,13 +115,6 @@ export function set(obj, k, v) {
     case 3:
         obj[k] = v;  //What if typeof k is object?
         break;
-    case 4:
-        if (typeof k === 'number' && typeof v === 'number' && typeof vargs === 'object') {
-            for (var i = v, j = 0; v < vargs; i++, j++) {
-                obj[i] = vargs[j];
-            }
-            break;
-        }
     }
     return obj;
 };
@@ -142,8 +135,8 @@ export function get(obj, k) {
                 k[i] = obj[k[i]];
             }
         } else {
-            for (var i in k) if (k.hasOwnProperty(i)) {
-                k[i] = obj[i];
+            for (var j in k) if (k.hasOwnProperty(j)) {
+                k[i] = obj[j];
             }
         }
         return k;
@@ -173,7 +166,7 @@ export function get(obj, k) {
 export function getdef(obj, k, defval) {
     var val = obj[ k ];
 
-    if (( val === undef ) && defval ) {
+    if (( val === undefined ) && defval ) {
         val = obj[ k ] = defval();
     }
     return val;
