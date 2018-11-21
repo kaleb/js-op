@@ -8,7 +8,7 @@
   ],
   "name": "op",
   "description": "JavaScript Standard Operators As Functions",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "repository": {
     "type": "git",
     "url": "http://github.com/klaeb/js-op.git"
