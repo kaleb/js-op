@@ -1,5 +1,6 @@
 export type Orderable = number|string|{valueOf: () => number};
 export type NotSymbol = boolean|number|string|Function|object;
+export type Key = string|number|symbol;
 
 export function lt<T extends Orderable>(a: T, b: T) {
     return a < b;
@@ -30,8 +31,11 @@ export function isnt<T>(a: T, b: T) {
  * Logical
  * =======
  */
-export function isIn(a: string, obj: object) {
-    return a in obj;
+export function has(target: object, key: Key) {
+    return key in target;
+}
+export function isIn(key: Key, target: object) {
+    return key in target;
 }
 export function not(obj: unknown) {
     return !(obj);
@@ -102,54 +106,54 @@ export function rshift(a: number, b: number) {
     return a >> b;
 };
 
-function getProperty<T, K extends keyof T>(obj: T, propertyName: K) {
-    return obj[propertyName];
+function getProperty<T, K extends keyof T>(target: T, key: K) {
+    return target[key];
 }
 
-function getProperties<T, K extends keyof T>(obj: T, propertyNames: K[]) {
-    return propertyNames.reduce((result, propertyName) => {
-        result[propertyName] = obj[propertyName];
+function getProperties<T, K extends keyof T>(target: T, keys: K[]) {
+    return keys.reduce((result, key) => {
+        result[key] = target[key];
         return result;
     }, {} as Partial<T>);
 }
 
-function setProperty<T, K extends keyof T>(obj: T, propertyName: K, propertyValue: T[K]) {
-    obj[propertyName] = propertyValue;
-    return obj;
+function setProperty<T, K extends keyof T>(target: T, key: K, value: T[K]) {
+    target[key] = value;
+    return target;
 }
 
-function setProperties<T, K extends keyof T>(obj: T, properties: Partial<T>) {
-    Object.assign(obj, properties) as T;
-    return obj;
+function setProperties<T, K extends keyof T>(target: T, source: Partial<T>) {
+    Object.assign(target, source) as T;
+    return target;
 }
 
 /**
  * Indexing
  * ========
  */
-export function set<T, K extends keyof T>(obj: T, properties: Partial<T>): T;
-export function set<T, K extends keyof T>(obj: T, propertyName: K, propertyValue: T[K]): T;
-export function set<T>(obj: T, k: (keyof T|Partial<T>), v?: unknown) {
+export function set<T, K extends keyof T>(target: T, source: Partial<T>): T;
+export function set<T, K extends keyof T>(target: T, key: K, value: T[K]): T;
+export function set<T>(target: T, k: (keyof T|Partial<T>), v?: unknown) {
     var len = arguments.length;
     if (len < 2 || len > 3 ) return; //perhaps throw error?
     switch(len) {
     case 2:
         if (typeof k === 'object' && k !== null) {
-            setProperties(obj, k);
+            setProperties(target, k);
             // break so fall-through sets obj[k] = undef
             break;
         }
     case 3:
         if (typeof k === 'string' || typeof k === 'number') {
-            setProperty(obj, k, v as any);
+            setProperty(target, k, v as any);
         }
         break;
     }
-    return obj;
+    return target;
 };
-export function del<T>(obj: T, k: keyof T) {
-    delete obj[k];
-    return obj;
+export function del<T>(target: T, k: keyof T) {
+    delete target[k];
+    return target;
 };
 export function get<T>(obj: T, k: keyof T|Partial<T>|Array<keyof T>) {
     if (typeof k === 'object') {
