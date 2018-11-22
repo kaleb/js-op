@@ -1,3 +1,4 @@
 /node_modules
-/op.js
-/test.js
+/*.js
+/*.js.map
+/*.d.ts

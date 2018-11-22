@@ -22,8 +22,8 @@
   "scripts": {
     "pretest": "npm run build",
     "test": "node test.js",
-    "build": "npx tsc",
-    "clean": "rm op.js test.js",
+    "build": "tsc",
+    "clean": "rm *.js *.js.map *.d.ts",
     "prepare": "npm test"
   }
 }
