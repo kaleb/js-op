@@ -1,12 +1,11 @@
 import assert from 'assert';
 import * as op from '../op';
-//const op = require('./op');
 
 describe('op', () => {
     it('works', () => {
         assert.ok(op.lt(1, 2));
         assert.ok(op.lt('', 'a'));
-        assert.ok(op.lt(new Date(0), new Date()))
+        assert.ok(op.lt(new Date(0), new Date()));
         assert.ok(op.le(1, 2));
         assert.ok(op.ge(2, 1));
         assert.ok(op.gt(2, 1));
@@ -42,7 +41,7 @@ describe('op', () => {
         assert.strictEqual(typeof op.get(op, 'get'), 'function');
         assert.deepStrictEqual(op.set({} as {key: string}, 'key', 'value'), {key: 'value'});
 
-        var o = {key: 'value'};
+        const o = {key: 'value'};
         assert.deepStrictEqual(op.del(o, 'key'), {});
     });
 });
