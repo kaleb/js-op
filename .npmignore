@@ -1,5 +1,7 @@
 /.gitignore
 /.git
 /test.js
+/test.js.map
 /test.ts
+/test.d.ts
 /tsconfig.json
