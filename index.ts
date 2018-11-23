@@ -1,5 +1,5 @@
-import {Key, NotSymbol} from './types';
-export {Key, NotSymbol, Orderable} from './types';
+import {NotSymbol} from './types';
+export {NotSymbol, Orderable} from './types';
 export {default as lt} from './is-less-than';
 export {default as le} from './is-less-than-or-equal';
 export {default as gt} from './is-greater-than';
@@ -8,17 +8,9 @@ export {default as eq} from './is-equal';
 export {default as ne} from './is-not-equal';
 export {default as is} from './is-strict-equal';
 export {default as isnt} from './is-not-strict-equal';
+export {default as has} from './has';
+export {default as isIn} from './is-in';
 
-/**
- * Logical
- * =======
- */
-export function has(target: object, key: Key) {
-    return key in target;
-}
-export function isIn(key: Key, target: object) {
-    return key in target;
-}
 export function not(obj: unknown) {
     return !(obj);
 }
