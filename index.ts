@@ -1,23 +1,13 @@
-import {Key, NotSymbol, Orderable} from './types';
+import {Key, NotSymbol} from './types';
 export {Key, NotSymbol, Orderable} from './types';
 export {default as lt} from './is-less-than';
 export {default as le} from './is-less-than-or-equal';
 export {default as gt} from './is-greater-than';
 export {default as ge} from './is-greater-than-or-equal';
-export function eq<T>(a: T, b: T) {
-    // tslint:disable-next-line:triple-equals
-    return a == b;
-}
-export function ne<T>(a: T, b: T) {
-    // tslint:disable-next-line:triple-equals
-    return a != b;
-}
-export function is<T>(a: T, b: T) {
-    return a === b;
-}
-export function isnt<T>(a: T, b: T) {
-    return a !== b;
-}
+export {default as eq} from './is-equal';
+export {default as ne} from './is-not-equal';
+export {default as is} from './is-strict-equal';
+export {default as isnt} from './is-not-strict-equal';
 
 /**
  * Logical
