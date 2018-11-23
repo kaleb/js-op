@@ -1,19 +1,9 @@
-export type Orderable = number|string|{valueOf: () => number};
-export type NotSymbol = boolean|number|string|(() => any)|object;
-export type Key = string|number|symbol;
-
-export function lt<T extends Orderable>(a: T, b: T) {
-    return a < b;
-}
-export function le<T extends Orderable>(a: T, b: T) {
-    return a <= b;
-}
-export function ge<T extends Orderable>(a: T, b: T) {
-    return a >= b;
-}
-export function gt<T extends Orderable>(a: T, b: T) {
-    return a > b;
-}
+import {Key, NotSymbol, Orderable} from './types';
+export {Key, NotSymbol, Orderable} from './types';
+export {default as lt} from './is-less-than';
+export {default as le} from './is-less-than-or-equal';
+export {default as gt} from './is-greater-than';
+export {default as ge} from './is-greater-than-or-equal';
 export function eq<T>(a: T, b: T) {
     // tslint:disable-next-line:triple-equals
     return a == b;
