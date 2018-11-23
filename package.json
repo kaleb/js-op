@@ -13,8 +13,6 @@
     "type": "git",
     "url": "http://github.com/kaleb/js-op.git"
   },
-  "main": "op.js",
-  "dependencies": {},
   "devDependencies": {
     "@types/mocha": "^5.2.5",
     "@types/node": "^10.12.9",
