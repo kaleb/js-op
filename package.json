@@ -28,7 +28,7 @@
     "pretest": "npm run lint",
     "test": "mocha",
     "build": "tsc",
-    "clean": "rm *.js *.js.map *.d.ts test/*.js test/*.js.map test/*.d.ts",
+    "clean": "rm *.js *.js.map *.d.ts iterable/*.js iterable/*.js.map iterable/*.d.ts test/*.js test/*.js.map test/*.d.ts test/iterable/*.js test/iterable/*.js.map test/iterable/*.d.ts",
     "prepare": "npm test && npm build",
     "lint": "tslint -p tsconfig.json"
   }

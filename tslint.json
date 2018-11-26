@@ -1,16 +1,15 @@
 {
     "defaultSeverity": "error",
     "extends": [
-        "tslint:all",
-        "tslint-eslint-rules"
+        "tslint-eslint-rules",
+        "tslint:all"
     ],
     "jsRules": {},
     "rules": {
         "quotemark": [true, "single", "avoid-escape", "avoid-template"],
         "jsdoc-format": [true, "check-multiline-start"],
-        "jsdoc-require": [true],
-        "no-redundant-jsdoc": [true],
-        "completed-docs": [true],
+        "no-redundant-jsdoc": true,
+        "completed-docs": false,
         "valid-js-doc": [false, {
             "requireParamType": false,
             "requireReturn": false,
@@ -43,7 +42,16 @@
             "elements",
             "members"
         ],
-        "newline-before-return": false
+        "newline-before-return": false,
+        "member-access": [true, "no-public"],
+        "no-parameter-properties": false,
+        "file-name-casing": [true, "kebab-case"],
+        "arrow-parens": [true, "ban-single-arg-parens"],
+        "array-type": false,
+        "no-unused-variable": false,
+        "strict-type-predicates": false,
+        "strict-boolean-expressions": false,
+        "match-default-export-name": false
     },
     "rulesDirectory": []
 }

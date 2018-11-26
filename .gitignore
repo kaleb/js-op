@@ -2,6 +2,12 @@
 /*.js
 /*.js.map
 /*.d.ts
+/iterable/*.js
+/iterable/*.js.map
+/iterable/*.d.ts
 /test/*.js
 /test/*.js.map
 /test/*.d.ts
+/test/iterable/*.js
+/test/iterable/*.js.map
+/test/iterable/*.d.ts
