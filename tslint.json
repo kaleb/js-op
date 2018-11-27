@@ -51,7 +51,11 @@
         "no-unused-variable": false,
         "strict-type-predicates": false,
         "strict-boolean-expressions": false,
-        "match-default-export-name": false
+        "match-default-export-name": false,
+        "max-line-length": [
+            true,
+            {"limit": 120, "ignore-pattern": "^ \\* @see "}
+        ]
     },
     "rulesDirectory": []
 }
