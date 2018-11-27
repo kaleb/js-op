@@ -1,4 +1,4 @@
- // tslint:disable:max-line-length triple-equals
+ // tslint:disable:triple-equals
 /**
  * Return whether both values are equal.
  * @see [equality operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Equality)

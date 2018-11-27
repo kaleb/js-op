@@ -1,5 +1,5 @@
 import assert from 'assert';
-import * as op from '..';
+import * as op from '../index';
 
 describe('op', () => {
     it('works', () => {
