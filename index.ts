@@ -11,6 +11,8 @@ export { default as isnt } from './is-not-strict-equal';
 export { default as is } from './is-strict-equal';
 export { NotSymbol, Orderable } from './types';
 
+// tslint:disable:completed-docs
+
 export function not(obj: unknown) {
     return !obj;
 }

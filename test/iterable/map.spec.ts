@@ -2,6 +2,7 @@ import * as assert from 'assert';
 import map from '../../iterable/map';
 import { iteratorFromIterable as iterator } from '../../iterator';
 
+/** square number */
 function square(x: number) {
     return x * x;
 }

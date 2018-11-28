@@ -9,7 +9,7 @@
         "quotemark": [true, "single", "avoid-escape", "avoid-template"],
         "jsdoc-format": [true, "check-multiline-start"],
         "no-redundant-jsdoc": true,
-        "completed-docs": false,
+        "completed-docs": true,
         "valid-js-doc": [false, {
             "requireParamType": false,
             "requireReturn": false,

@@ -3,11 +3,15 @@
  */
 export class MapIterable<X, Y> implements Iterable<Y> {
     constructor(private readonly f: (x: X) => Y, private readonly xs: Iterable<X>) {}
+    /**
+     * Return iterator
+     */
     [Symbol.iterator]() {
         return MapGenerator(this.f, this.xs);
     }
 }
 
+/** map */
 export default function map<X, Y>(f: (x: X) => Y, xs: Iterable<X>): Iterable<Y>;
 export default function map<X, Y>(f: (x: X) => Y): MapPartial<X, Y>;
 export default function map<X, Y>(f: (x: X) => Y, maybeXs?: Iterable<X>) {
@@ -21,6 +25,7 @@ export type MapPartial<X, Y> = (xs: Iterable<X>) => Iterable<Y>;
 
 export type MapAsyncPartial<X, Y> = (xs: Iterable<X>) => AsyncIterableIterator<Y>;
 
+/** Generate iterator */
 export function *MapGenerator<X, Y>(f: (x: X) => Y, xs: Iterable<X>): IterableIterator<Y> {
     for (const x of xs) {
         yield f(x);
