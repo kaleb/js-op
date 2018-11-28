@@ -11,6 +11,8 @@ export {default as isnt} from './is-not-strict-equal';
 export {default as has} from './has';
 export {default as isIn} from './is-in';
 
+// tslint:disable:completed-docs
+
 export function not(obj: unknown) {
     return !obj;
 }

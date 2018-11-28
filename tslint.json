@@ -8,9 +8,8 @@
     "rules": {
         "quotemark": [true, "single", "avoid-escape", "avoid-template"],
         "jsdoc-format": [true, "check-multiline-start"],
-        "jsdoc-require": [true],
-        "no-redundant-jsdoc": [true],
-        "completed-docs": [true],
+        "no-redundant-jsdoc": true,
+        "completed-docs": true,
         "valid-js-doc": [false, {
             "requireParamType": false,
             "requireReturn": false,
