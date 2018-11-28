@@ -1,11 +1,14 @@
 import * as assert from 'assert';
 import zip from '../../iterable/zip-all';
-import { assertDone, assertEmpty } from '../util';
 
 describe('zip-all', () => {
     // tslint:disable:no-magic-numbers
     it('returns an empty iterable when given zero arguments', () => {
-        assertEmpty(zip());
+        const i = zip();
+        assert.deepStrictEqual(i.next(), {
+            done: true,
+            value: [],
+        });
     });
 
     it('returns an iterable of length-1 arrays when given 1 valid argument', () => {
@@ -18,7 +21,10 @@ describe('zip-all', () => {
             done: false,
             value: [2],
         });
-        assertDone(i.next());
+        assert.deepStrictEqual(i.next(), {
+            done: true,
+            value: [undefined],
+        });
     });
 
     it('returns an iterable of length-2 arrays when given 2 valid arguments', () => {
@@ -31,6 +37,9 @@ describe('zip-all', () => {
             done: false,
             value: [2, 'b'],
         });
-        assertDone(i.next());
+        assert.deepStrictEqual(i.next(), {
+            done: true,
+            value: [undefined, undefined],
+        });
     });
 });

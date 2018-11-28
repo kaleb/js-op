@@ -12,6 +12,7 @@ type Iteratee = (...args: any[]) => any;
  * Map all
  */
 export default function *mapAll<F extends Iteratee>(f: F, ...iterables: Iterables<Parameters<F>>) {
+    // tslint:disable-next-line:no-unsafe-any
     for (const args of zip(...iterables)) {
         yield f.apply(undefined, args) as ReturnType<F>;
     }
