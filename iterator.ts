@@ -1,7 +1,6 @@
 /**
  * Return {Iterator} from {Iterable} or {Function}
  */
-export default function iterator<T>(fn: () => T): Iterator<T>;
 export default function iterator<T>(iterable: Iterable<T>|(() => T)): Iterator<T> {
     return typeof iterable === 'function' ? iteratorFromFunction(iterable) : iteratorFromIterable(iterable);
 }
