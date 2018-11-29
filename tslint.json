@@ -54,7 +54,7 @@
         "match-default-export-name": false,
         "max-line-length": [
             true,
-            {"limit": 120, "ignore-pattern": "^ \\* @see "}
+            {"limit": 120, "ignore-pattern": "^ \\* @see |^export default function"}
         ]
     },
     "rulesDirectory": []
