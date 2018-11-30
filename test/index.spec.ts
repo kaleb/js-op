@@ -1,6 +1,7 @@
 import assert from 'assert';
 import * as op from '../index';
 
+// tslint:disable:no-magic-numbers
 describe('op', () => {
     it('works', () => {
         assert.ok(op.lt(1, 2));
@@ -39,6 +40,7 @@ describe('op', () => {
         assert.strictEqual(op.concat('a', 'b'), 'ab');
 
         assert.strictEqual(typeof op.get(op, 'get'), 'function');
+        // tslint:disable-next-line:no-object-literal-type-assertion
         assert.deepStrictEqual(op.set({} as {key: string}, 'key', 'value'), {key: 'value'});
 
         const o = {key: 'value'};

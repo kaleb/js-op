@@ -1,15 +1,15 @@
-import {NotSymbol} from './types';
-export {NotSymbol, Orderable} from './types';
-export {default as lt} from './is-less-than';
-export {default as le} from './is-less-than-or-equal';
-export {default as gt} from './is-greater-than';
-export {default as ge} from './is-greater-than-or-equal';
-export {default as eq} from './is-equal';
-export {default as ne} from './is-not-equal';
-export {default as is} from './is-strict-equal';
-export {default as isnt} from './is-not-strict-equal';
-export {default as has} from './has';
-export {default as isIn} from './is-in';
+import { NotSymbol } from './types';
+export { default as has } from './has';
+export { default as eq } from './is-equal';
+export { default as gt } from './is-greater-than';
+export { default as ge } from './is-greater-than-or-equal';
+export { default as isIn } from './is-in';
+export { default as lt } from './is-less-than';
+export { default as le } from './is-less-than-or-equal';
+export { default as ne } from './is-not-equal';
+export { default as isnt } from './is-not-strict-equal';
+export { default as is } from './is-strict-equal';
+export { NotSymbol, Orderable } from './types';
 
 // tslint:disable:completed-docs
 
