@@ -21,8 +21,11 @@ export { NotSymbol, Orderable } from './types';
  * Arithmetic
  * ==========
  */
-
-export function add(a: number, b: number) {
+export function add(a: number, b: number): number;
+export function add(a: bigint, b: bigint): bigint;
+// tslint:disable-next-line:no-any
+export function add(a: any, b: any) {
+    // tslint:disable-next-line:no-unsafe-any restrict-plus-operands
     return a + b;
 }
 export function sub(a: number, b: number) {
