@@ -1,4 +1,5 @@
 import { NotSymbol } from './types';
+export { default as and } from './and';
 export { default as has } from './has';
 export { default as eq } from './is-equal';
 export { default as gt } from './is-greater-than';
@@ -9,23 +10,12 @@ export { default as le } from './is-less-than-or-equal';
 export { default as ne } from './is-not-equal';
 export { default as isnt } from './is-not-strict-equal';
 export { default as is } from './is-strict-equal';
+export { default as not } from './not';
+export { default as or } from './or';
+export { default as truth } from './truth';
 export { NotSymbol, Orderable } from './types';
 
 // tslint:disable:completed-docs
-
-export function not(obj: unknown) {
-    return !obj;
-}
-export function truth(obj: unknown) {
-    return !!obj;
-}
-
-export function and(a: unknown, b: unknown) {
-    return a && b;
-}
-export function or(a: unknown, b: unknown) {
-    return a || b;
-}
 
 /*
  * Arithmetic
