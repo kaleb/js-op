@@ -1,6 +1,7 @@
 import assert from 'assert';
 import * as op from '../index';
 
+// tslint:disable:no-magic-numbers
 describe('op', () => {
     // tslint:disable:no-magic-numbers
     it('works', () => {
