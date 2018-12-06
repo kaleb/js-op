@@ -1,5 +1,10 @@
-import { NotSymbol } from './types';
+export { default as add } from './add';
 export { default as and } from './and';
+export { default as bitand } from './bitand';
+export { default as bitnot } from './bitnot';
+export { default as bitor } from './bitor';
+export { default as xor } from './bitxor';
+export { default as div } from './div';
 export { default as has } from './has';
 export { default as eq } from './is-equal';
 export { default as gt } from './is-greater-than';
@@ -10,76 +15,18 @@ export { default as le } from './is-less-than-or-equal';
 export { default as ne } from './is-not-equal';
 export { default as isnt } from './is-not-strict-equal';
 export { default as is } from './is-strict-equal';
+export { default as lshift } from './lshift';
+export { default as mul } from './mul';
+export { default as neg } from './neg';
 export { default as not } from './not';
 export { default as or } from './or';
+export { default as pos } from './pos';
+export { default as rem } from './rem';
+export { default as rshift } from './rshift';
+export { default as sub } from './sub';
 export { default as truth } from './truth';
-export { NotSymbol, Orderable } from './types';
 
 // tslint:disable:completed-docs
-
-/*
- * Arithmetic
- * ==========
- */
-export function add(a: number, b: number): number;
-export function add(a: bigint, b: bigint): bigint;
-// tslint:disable-next-line:no-any
-export function add(a: any, b: any) {
-    // tslint:disable-next-line:no-unsafe-any restrict-plus-operands
-    return a + b;
-}
-export function sub(a: number, b: number) {
-    return a - b;
-}
-export function mul(a: number, b: number) {
-    return a * b;
-}
-export function div(a: number, b: number) {
-    return a / b;
-}
-export function floordiv(a: number, b: number) {
-    return Math.floor(a / b);
-}
-export function divmod(a: number, b: number) {
-    return [floordiv(a, b), a % b];
-}
-export function mod(a: number, b: number) {
-    return a % b;
-}
-export function pos(obj: NotSymbol) {
-    return +obj;
-}
-export function neg(obj: number) {
-    return -obj;
-}
-/*
- * Bitwise
- * =======
- */
-export function and_(a: number, b: number) {
-    // tslint:disable-next-line:no-bitwise
-    return a & b;
-}
-export function or_(a: number, b: number) {
-    // tslint:disable-next-line:no-bitwise
-    return a | b;
-}
-export function invert(a: number) {
-    // tslint:disable-next-line:no-bitwise
-    return ~a;
-}
-export function xor(a: number, b: number) {
-    // tslint:disable-next-line:no-bitwise
-    return a ^ b;
-}
-export function lshift(a: number, b: number) {
-    // tslint:disable-next-line:no-bitwise
-    return a << b;
-}
-export function rshift(a: number, b: number) {
-    // tslint:disable-next-line:no-bitwise
-    return a >> b;
-}
 
 function getProperty<T, K extends keyof T>(target: T, key: K) {
     return target[key];

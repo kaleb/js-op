@@ -55,7 +55,8 @@
         "max-line-length": [
             true,
             {"limit": 120, "ignore-pattern": "^ \\* @see "}
-        ]
+        ],
+        "triple-equals": [true, "allow-undefined-check"]
     },
     "rulesDirectory": []
 }

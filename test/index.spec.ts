@@ -24,15 +24,13 @@ describe('op', () => {
         assert.strictEqual(op.sub(1, 2), -1);
         assert.strictEqual(op.mul(1, 2), 2);
         assert.strictEqual(op.div(1, 2), 0.5);
-        assert.strictEqual(op.floordiv(1, 2), 0);
-        assert.deepStrictEqual(op.divmod(1, 2), [0, 1]);
-        assert.strictEqual(op.mod(1, 2), 1);
+        assert.strictEqual(op.rem(1, 2), 1);
         assert.strictEqual(op.pos(-1), -1);
         assert.strictEqual(op.neg(-1), 1);
 
-        assert.strictEqual(op.and_(1, 2), 0);
-        assert.strictEqual(op.or_(1, 2), 3);
-        assert.strictEqual(op.invert(1), -2);
+        assert.strictEqual(op.bitand(1, 2), 0);
+        assert.strictEqual(op.bitor(1, 2), 3);
+        assert.strictEqual(op.bitnot(1), -2);
         assert.strictEqual(op.xor(1, 2), 3);
         assert.strictEqual(op.lshift(1, 2), 4);
         assert.strictEqual(op.rshift(1, 2), 0);

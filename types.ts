@@ -1,2 +1,1 @@
-export type Orderable = number|string|{valueOf(): number};
-export type NotSymbol = boolean|number|string|(() => unknown)|object;
+export type Orderable = number|bigint|string|{valueOf(): number}|{valueOf(): bigint};
