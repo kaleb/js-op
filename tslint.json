@@ -56,7 +56,8 @@
             true,
             {"limit": 120, "ignore-pattern": "^ \\* @see "}
         ],
-        "triple-equals": [true, "allow-undefined-check"]
+        "triple-equals": [true, "allow-undefined-check"],
+        "no-default-import": false
     },
     "rulesDirectory": []
 }
