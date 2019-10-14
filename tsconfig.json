@@ -62,7 +62,7 @@
       "alwaysShowRuleFailuresAsWarnings": false,
       "ignoreDefinitionFiles": true,
       "suppressWhileTypeErrorsPresent": false,
-      "mockTypeScriptVersion": false,
+      "mockTypeScriptVersion": false
     }]
   }
 }

@@ -14,23 +14,24 @@
     "url": "http://github.com/kaleb/js-op.git"
   },
   "devDependencies": {
-    "@types/mocha": "^5.2.5",
-    "@types/node": "^10.12.9",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^10.14.19",
     "mocha": "^5.2.0",
     "ts-node": "^7.0.1",
-    "tslint": "^5.11.0",
+    "tslint": "^5.20.0",
     "tslint-eslint-rules": "^5.4.0",
     "tslint-jsdoc-rules": "^0.1.3",
     "tslint-microsoft-contrib": "^5.2.1",
-    "typescript": "^3.2.1",
-    "typescript-tslint-plugin": "^0.1.0"
+    "typescript": "^3.7.0-beta",
+    "typescript-tslint-plugin": "^0.1.2"
   },
   "scripts": {
     "pretest": "npm run lint",
     "test": "mocha",
+    "prebuild": "npm test",
     "build": "tsc",
     "clean": "rm *.js *.js.map *.d.ts test/*.js test/*.js.map test/*.d.ts",
-    "prepare": "npm test && npm build",
+    "prepublishOnly": "npm build",
     "lint": "tslint -p tsconfig.json"
   }
 }
