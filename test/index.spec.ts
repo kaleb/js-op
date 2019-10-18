@@ -37,8 +37,8 @@ describe('op', () => {
 
         assert.strictEqual(op.concat('a', 'b'), 'ab');
 
-        assert.strictEqual(typeof op.get(op, 'get'), 'function');
-        // tslint:disable-next-line:no-object-literal-type-assertion
+        assert.strictEqual(typeof op.getProperty(op, 'getProperty'), 'function');
+        // tslint:disable-next-line:no-object-literal-type-assertion completed-docs
         assert.deepStrictEqual(op.set({} as {key: string}, 'key', 'value'), {key: 'value'});
 
         const o = {key: 'value'};

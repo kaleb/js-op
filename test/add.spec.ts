@@ -1,6 +1,7 @@
 import add from '../add';
 import neg from '../neg';
-import { assertHasIdentity, assertHasInverse, assertIsAssociative, assertIsCommutative } from './util';
+
+import {assertHasIdentity, assertHasInverse, assertIsAssociative, assertIsCommutative} from './util';
 
 // tslint:disable:no-magic-numbers
 

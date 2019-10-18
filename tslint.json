@@ -57,7 +57,8 @@
             {"limit": 120, "ignore-pattern": "^ \\* @see "}
         ],
         "triple-equals": [true, "allow-undefined-check"],
-        "no-default-import": false
+        "no-default-import": false,
+        "ordered-imports": false
     },
     "rulesDirectory": []
 }

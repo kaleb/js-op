@@ -1,5 +1,5 @@
 import mul from '../mul';
-import { assertHasIdentity, assertHasInverse, assertIsAssociative, assertIsCommutative } from './util';
+import {assertHasIdentity, assertHasInverse, assertIsAssociative, assertIsCommutative} from './util';
 
 // tslint:disable:no-magic-numbers
 describe('mul', () => {
